@@ -1,0 +1,298 @@
+<style>
+    
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2) format('woff2');
+        font-weight: 600;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2) format('woff2');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    :root {
+        --font-main: 'MaruBuri', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+
+        --bg-page: #fcf3e3;
+        --text-dark: #000000;
+        --text-light: #ffffff;
+
+        --card-1-bg: #bc1c1a;
+        --card-2-bg: #fdbf4a;
+        --card-3-bg: #42aa8b;
+    }
+
+    * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        word-break: keep-all;
+    }
+
+    body {
+        font-family: var(--font-main);
+        background-color: var(--bg-page);
+        color: var(--text-dark);
+        line-height: 1.6;
+        overflow-x: hidden;
+        -webkit-font-smoothing: antialiased;
+    }
+
+    .dummy-section {
+        min-height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 2rem;
+        color: #888;
+    }
+
+    .scroll-section {
+        height: 400vh;
+        position: relative;
+    }
+
+    .sticky-wrapper {
+        position: sticky;
+        top: 0;
+        height: 100vh;
+        overflow: hidden;
+    }
+
+    .intro-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        padding: 2rem;
+        will-change: transform;
+        z-index: 10;
+        transform-origin: top center;
+    }
+
+    .intro-content h3 {
+        font-size: clamp(2.5rem, 5vw, 5rem);
+        font-weight: 700;
+        max-width: 1200px;
+        letter-spacing: -0.02em;
+        line-height: 1.7;
+        color: var(--text-dark);
+    }
+
+    .card {
+        position: absolute;
+        left: 5%;
+        right: 5%;
+        top: 0;
+
+        height: auto;
+        min-height: 50vh;
+
+        display: flex;
+        flex-direction: column;
+
+        clip-path: polygon(40px 0%, 100% 0%,
+                100% calc(100% - 40px), calc(100% - 40px) 100%,
+                0% 100%, 0% 40px);
+        box-shadow: none;
+
+        transform-origin: top center;
+        will-change: transform;
+
+        background-size: cover;
+        background-position: center;
+        overflow: hidden;
+
+        transform: translate3d(0, 100vh, 0) scale(1);
+    }
+
+    #card1 {
+        background-color: var(--card-1-bg);
+        z-index: 1;
+    }
+
+    #card2 {
+        background-color: var(--card-2-bg);
+        z-index: 2;
+    }
+
+    #card3 {
+        background-color: var(--card-3-bg);
+        z-index: 3;
+    }
+
+    .card-content-overlay {
+        position: relative;
+        z-index: 1;
+        padding: 3rem 4rem 4rem 4rem;
+        display: flex;
+        flex-direction: column;
+        gap: 3rem;
+        width: 100%;
+        color: var(--text-light);
+    }
+
+    .card-title {
+        font-size: 3rem;
+        font-weight: 700;
+        line-height: 1.7;
+    }
+
+    .card-text {
+        font-size: 2rem;
+        font-weight: 600;
+        color: var(--text-light);
+    }
+
+    @media (min-width: 1100px) {
+        .card-content-overlay {
+            flex-direction: row;
+            gap: 4rem;
+        }
+
+        .card-title {
+            flex: 1;
+        }
+
+        .card-body {
+            flex: 1;
+        }
+    }
+
+    @media (max-width: 900px) {
+        .card {
+            padding: 0;
+        }
+
+        .card-content-overlay {
+            padding: 2rem;
+            gap: 2rem;
+        }
+
+        .card-title {
+            font-size: 2.2rem;
+        }
+
+        .card-text {
+            font-size: 1.5rem;
+        }
+    }
+
+    .contents {
+        width: 1000px;
+        margin: auto;
+        padding: 0px;
+    }
+
+    h1 {
+        font-size: 11rem;
+        font-weight: 700;
+        color: #bc1c1a;
+    }
+
+    h2 {
+        font-size: 4rem;
+        font-weight: 700;
+    }
+
+    .highlight-wrapper {
+        position: relative;
+        display: inline-block;
+        white-space: nowrap;
+    }
+
+    .highlight-base {
+        color: var(--text-light);
+    }
+
+    .highlight-active {
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        color: #000000;
+        clip-path: inset(0 100% 0 0);
+        z-index: 1;
+    }
+
+    .highlight-active::before {
+        content: "";
+        position: absolute;
+        top: -4px;
+        bottom: -4px;
+        left: -12px;
+        right: -12px;
+        background-color: #fdbf4a;
+        z-index: -1;
+        transform: rotate(-1deg);
+        border-radius: 4px;
+    }
+
+    .qm-wrapper {
+        position: relative;
+        display: inline-block;
+        width: 0.6em;
+        height: 1em;
+    }
+
+    .question-mark {
+        position: absolute;
+        left: 50%;
+        top: 65%;
+        font-size: 400%;
+        
+        transform-origin: center center;
+        transform: translate(-50%, -50%) scale(0.25);
+        will-change: transform, color;
+        line-height: 1;
+    }
+
+    @keyframes periodic-shake {
+        0%, 85%, 100% { transform: rotate(0deg); }
+        88% { transform: rotate(3deg); }
+        91% { transform: rotate(-3deg); }
+        94% { transform: rotate(3deg); }
+        97% { transform: rotate(-3deg); }
+    }
+
+    .tile-link {
+        display: block;
+        transition: transform 0.3s ease;
+        text-decoration: none;
+    }
+
+    .tile-link img {
+        display: block;
+        animation: periodic-shake 4s infinite ease-in-out;
+        transform-origin: center center;
+        will-change: transform;
+    }
+
+    .tile-link.delay-shake img {
+        animation-delay: 2s;
+    }
+
+    .tile-link:hover {
+        transform: translateY(-10px) scale(1.02);
+    }
+
+    .tile-link:hover img {
+        animation: none;
+    }
+
+    footer {
+        padding: 130px 0px 50px 0px; 
+        background-color: dimgray;
+    }
+
+</style>

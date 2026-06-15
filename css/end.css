@@ -1,0 +1,155 @@
+<style>
+
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2) format('woff2');
+        font-weight: 600;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2) format('woff2');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    html { 
+        word-break: keep-all; 
+        overflow-x: hidden; 
+    }
+    
+    body { 
+        margin: 0; 
+        padding: 0; 
+        background-color: #fcf3e3;
+    }
+
+    h1, h2, p { 
+        margin: 0; 
+        padding: 0; 
+        font-family: 'MaruBuri', sans-serif; 
+    }
+
+    h1 {
+        font-size: 5rem;
+        font-weight: 700;
+        color: white;
+        line-height: 1.7;
+    }
+
+    .contents {
+        width: 1000px;
+        margin: auto;
+        padding: 0px;
+    }
+
+    .center-oversized-img {
+        display: block;
+        position: relative;
+        left: 50%;
+        transform: translateX(-50%);
+    }
+
+    .megaphone-section {
+        margin-top: 50px;
+        margin-bottom: 400px;
+    }
+
+    .card-section {
+        margin-bottom: 800px; 
+        position: relative;
+        z-index: 5; 
+    }
+
+    .bottom-section {
+        position: relative;
+        width: 100vw;
+        margin-top: 50px;
+    }
+
+    .bottom-section .bg-img {
+        position: sticky;
+        top: 0;
+        width: 100vw;
+        height: 100vh;
+        object-fit: cover;
+        z-index: 1; 
+    }
+
+    .overlay {
+        position: relative;
+        margin-top: -100vh; 
+        width: 100%;
+        z-index: 10; 
+    }
+
+    .spacer-start {
+        height: 100vh; 
+    }
+
+    .spacer-between {
+        height: 80vh; 
+    }
+
+    .spacer-end {
+        height: 80vh;
+    }
+
+    .black-bar {
+        background-color: #000000;
+        width: 100vw;
+        padding: 50px 0; 
+    }
+
+    .text-container {
+        width: 1000px; 
+        margin: auto;
+    }
+
+	:root {
+		--btn-width: 247px;
+	    --btn-height: 70px;
+	}
+
+	.image-wrapper {
+	    display: block;
+	    position: relative;
+	    left: 50%;
+	    transform: translateX(-50%);
+	    width: 1222px;
+	}
+
+	.image-wrapper img {
+	    width: 100%;
+	    display: block;
+	}
+
+	.overlay-btn {
+	    position: absolute;
+	    width: var(--btn-width);
+	    height: var(--btn-height);
+	    background-color: transparent;
+	    display: block;
+	    z-index: 10;
+	    transform: translate(-50%, -50%); 
+	}
+
+	.btn-c1-left  { top: 83.5%; left: 17.6%; }
+	.btn-c1-right { top: 83.5%; left: 40.8%; }
+
+	.btn-c2       { top: 79.3%; left: 17.6%; }
+	.btn-c3       { top: 79.3%; left: 17.6%; }
+	.btn-c4       { top: 79.3%; left: 17.6%; }
+
+	.btn-c5-left  { top: 83.5%; left: 17.6%; }
+	.btn-c5-right { top: 83.5%; left: 40.8%; }
+
+    footer {
+        position: relative;
+        z-index: 20;
+        padding: 130px 0px 50px 0px; 
+        background-color: dimgray;
+    }
+
+</style>

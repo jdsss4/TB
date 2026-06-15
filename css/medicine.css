@@ -1,0 +1,161 @@
+<style>
+
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-SemiBold.woff2) format('woff2');
+        font-weight: 600;
+        font-display: swap;
+    }
+
+    @font-face {
+        font-family: 'MaruBuri';
+        src: url(https://hangeul.pstatic.net/hangeul_static/webfont/MaruBuri/MaruBuri-Bold.woff2) format('woff2');
+        font-weight: 700;
+        font-display: swap;
+    }
+
+    html { 
+        word-break: keep-all; 
+        overflow-x: hidden;
+    }
+    body { margin: 0; padding: 0; font-family: 'MaruBuri', serif; background-color: #000; }
+
+    h1, h2, p { margin: 0; padding: 0; font-family: 'MaruBuri'; }
+
+    h1 { 
+        font-size: 5rem; 
+        font-weight: 700; 
+        margin-bottom: 20px; 
+        line-height: var(--h1-line-height); 
+    }
+    
+    h2 { 
+        font-size: 4rem; 
+        font-weight: 700; 
+        margin-bottom: var(--heading-spacing); 
+        line-height: var(--h2-line-height); 
+    }
+    
+    p { 
+        font-size: 2rem; 
+        font-weight: 600; 
+        line-height: var(--p-line-height); 
+        color: #444; 
+    }
+
+    section {
+        position: relative;
+        width: 100%;
+        min-height: 80vh; 
+        display: flex;
+        align-items: center; 
+        padding: 100px 0;
+        overflow: hidden; 
+    }
+
+    section.allow-overlap {
+        overflow: visible;
+    }
+
+    :root {
+    --h1-line-height: 1.7; 
+    --h2-line-height: 1.7; 
+    --p-line-height: 1.8; 
+    --heading-spacing: 40px; 
+    --bacteria-darkness: rgba(0, 0, 0, 0.7);
+    }
+
+
+    .contents {
+        width: 1000px;
+        max-width: 90%;
+        margin: auto;
+        padding: 0px;
+        position: relative; 
+        z-index: 2; 
+    }
+
+    .text-box {
+        position: relative;
+        z-index: 2;
+        width: 70%; 
+    }
+
+    .align-right { margin-left: auto; }
+    .align-center { margin: 0 auto; text-align: center; }
+    .text-center { text-align: center; }
+
+    .text-gold { color: #fdbf4a; }
+    .text-white { color: #ffffff; }
+    .text-white p { color: #dddddd; }
+    .text-black { color: #000000; }
+
+    .fg-img {
+        position: absolute;
+        z-index: 3;
+        height: auto; 
+    }
+
+    .fg-pill {
+        top: 10%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 600px; 
+    }
+
+    .fg-vials {
+        left: 100px;
+        bottom: -333px; 
+        width: 1500px;
+        z-index: 5;
+    }
+    .fg-syringes {
+        right: 150px;
+        bottom: -150px;
+        width: 450px;
+        z-index: 5;
+        transform: rotate(10deg);
+    }
+
+    .fg-scale {
+        left: -570px;
+        bottom: -340px; 
+        width: 800px;
+    }
+
+    .fg-cross {
+        right: -500px;
+        bottom: -660px;
+        width: 800px;
+        z-index: 6;
+    }
+
+    .bg-black { background-color: black; color: white; }
+    .bg-beige { background-color: #fcf3e3; color: black; }
+    .bg-yellow { background-color: #fdbf4a; color: black; min-height: 40vh; }
+    .bg-gray { background-color: #e5e3e1; min-height: 20vh; }
+    
+    .bg-bacteria {
+        background-color: #1a101a;
+        background-image: linear-gradient(var(--bacteria-darkness), var(--bacteria-darkness)), url('../images/bacteria1.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #ffffff;
+    }
+
+    .bg-molecule {
+        background-color: #b7c6ce;
+        background-image: url('../images/molecules1.jpg');
+        background-size: cover;
+        background-position: center;
+        color: #000000;
+    }
+
+    footer {
+        position: relative;
+        z-index: 20;
+        padding: 130px 0px 50px 0px; 
+        background-color: dimgray;
+    }
+
+</style>
